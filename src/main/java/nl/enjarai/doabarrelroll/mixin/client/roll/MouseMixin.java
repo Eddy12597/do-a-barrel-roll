@@ -70,13 +70,13 @@ public abstract class MouseMixin implements RollMouse {
 
                 // enlarge the vector and apply it to the camera
                 readyTurnVec.mul(1200 * (float) mouseDelta);
-                rollPlayer.doABarrelRoll$changeElytraLook(readyTurnVec.y, readyTurnVec.x, 0, ModConfig.INSTANCE.getDesktopSensitivity(), mouseDelta);
+                rollPlayer.doABarrelRoll$changeElytraLook(-readyTurnVec.y, readyTurnVec.x, 0, ModConfig.INSTANCE.getDesktopSensitivity(), mouseDelta);
 
             } else {
 
                 // if we are not using a momentum based mouse, we can reset it and apply the values directly
                 mouseTurnVec.zero();
-                rollPlayer.doABarrelRoll$changeElytraLook(cursorDeltaY, cursorDeltaX, 0, ModConfig.INSTANCE.getDesktopSensitivity(), mouseDelta);
+                rollPlayer.doABarrelRoll$changeElytraLook(-cursorDeltaY, cursorDeltaX, 0, ModConfig.INSTANCE.getDesktopSensitivity(), mouseDelta);
             }
 
             return true;
